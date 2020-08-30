@@ -49,7 +49,15 @@ Input format
 	"ticketCount":4
 }
 ```
-***Description:*** If a user does not exist and the user hits the booking API, it first creates the user then, books the movies and revert with the response shown below. 
+***Description:*** If a user does not exist and the user hits the booking API, it first creates the user then, books the movies and revert with the response shown below.
+
+BOOK TICKETS
+
+![BOOK TICKETS ](https://github.com/rochershma/BookingMovies/blob/master1/book-tickets.PNG)
+
+
+BOOKING TICKETS BUT NO SEAT LEFT
+![BOOK TICKETS ](https://github.com/rochershma/BookingMovies/blob/master1/book-tickets-no-seats-left.PNG)
 
 
 ### Use Case 2
@@ -63,6 +71,18 @@ Input format
 ```
 ***Description:*** User will enter a ticket Id along with a new ticket time. In case if ticket does not exist in the system, it will simply revert with the message like below.
 
+UPDATE TICKET TIME
+![BOOK TICKETS ](https://github.com/rochershma/BookingMovies/blob/master1/updateTicket-update.PNG)
+
+
+
+
+UPDATING TICKET TIME BUT NO SUCH TIME HAS BEEN FOUND
+![BOOK TICKETS ](https://github.com/rochershma/BookingMovies/blob/master1/updateTicket-ticket-not-found.PNG)
+
+
+
+
 ### Use Case 3
 **View all  tickets for a particular time (GET)**
 ```
@@ -71,6 +91,8 @@ http://localhost:8080/BookingMovies/getTickets?ticketTime=2020-08-30T08:40
 ```
 ***Description:*** User will give a ticket time, if any tickets are there for that time, it will return list of tickets, otherwise it will revert with the message.  
 
+GETTING ALL TICKETS OF A PARTICULAR TIME
+![BOOK TICKETS ](https://github.com/rochershma/BookingMovies/blob/master1/Get-All-Tickets-for-a-ticket-time.PNG)
 
 ### Use Case 4
 **Delete a particular ticket (DELETE)**
@@ -82,6 +104,16 @@ Input format
 ```
 ***Description:*** User will input the ticket Id and System will delete the ticket if any such ticket would be found.
 
+DELETING A TICKET
+![BOOK TICKETS ](https://github.com/rochershma/BookingMovies/blob/master1/deleteTicket-deleted.PNG)
+
+
+
+DELETING A TICKET BUT TICKET ID DOES NOT EXISTS
+![BOOK TICKETS ](https://github.com/rochershma/BookingMovies/blob/master1/deleteTicket-ticket-not-found.PNG)
+
+
+
 
 
 ### Use Case 5
@@ -91,6 +123,9 @@ Input format
 http://localhost:8080/BookingMovies/getUserWithTicket?ticketId=cde637cd-f6b7-40d8-b631-64dd6e0949cd
 ```
 ***Description:*** User will input the ticket Id using get request. If there exists any such ticket, it will return the user's information like below. 
+
+GETTING USER DETAILS WITH TICKET ID
+![BOOK TICKETS ](https://github.com/rochershma/BookingMovies/blob/master1/getUserWithTicket.PNG)
 
 
 
@@ -106,6 +141,8 @@ Input format
 ```
 ***Description:*** It will create a new user into the system. If a user exists into the system. then system will revert with the message. 
 
+ADDING USER
+![](https://github.com/rochershma/BookingMovies/blob/master1/adduser.PNG)
 
 
 
@@ -118,6 +155,9 @@ http://localhost:8080/BookingMovies/getUser?phoneNumber=9604587612
 ***Description:*** It will give the information of the user provided a phone number of the user..
 
 ### Additional feature to delete expired tickets automatically
+
+GETTING USER
+![](https://github.com/rochershma/BookingMovies/blob/master1/getUser.PNG)
 
   The Feature of scheduled task in SPRING is used like below where a cron runs at every 5 minutes.
 
@@ -132,3 +172,8 @@ http://localhost:8080/BookingMovies/getUser?phoneNumber=9604587612
 	}
 ```
 ***Description:*** It will give the information of the user provided a phone number of the user.
+
+
+AUTOMATIC DELETION OF EXPIRED TICKETS
+![](https://github.com/rochershma/BookingMovies/blob/master1/automatic-deletion-of-expired-tickets-cron.PNG)
+
