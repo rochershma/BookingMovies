@@ -36,6 +36,8 @@
 - [x] **Mark a ticket as expired if there is a diff of 8 hours between the ticket timing and current time.**
 - [x] **Delete all the tickets which are expired automatically.**
 
+### Constraint 
+   For a particular time, maximum of 20 tickets can be booked.
 ### Use Case 1 
 **Booking a ticket (POST)**
 ```
