@@ -1,5 +1,5 @@
 # BookingMovies
-  This backend version of this application consumed REST API.
+   Backend version of this application is exposing REST API.
 ## Requirements
 
 >**JAVA**
@@ -39,7 +39,7 @@
 ### Constraint 
    For a particular time, maximum of 20 tickets can be booked.
 ### Use Case 1 
-**Booking a ticket (POST)**
+**BOOKING A TICKET (POST)**
 ```
 Input format
 {
@@ -61,11 +61,11 @@ BOOKING TICKETS BUT NO SEAT LEFT
 
 
 ### Use Case 2
-**Update ticket time**
+**UPDATE TICKET TIME (PUT)**
 ```
 Input format
 {
-	"ticketId":"f8f37203-5cba-4ffa-9ef1-abb2e8c12c7a (PUT)",
+	"ticketId":"f8f37203-5cba-4ffa-9ef1-abb2e8c12c7a",
 	"newTicketTime":"2020-08-30T08:30"
 }
 ```
@@ -84,7 +84,7 @@ UPDATING TICKET TIME BUT NO SUCH TIME HAS BEEN FOUND
 
 
 ### Use Case 3
-**View all  tickets for a particular time (GET)**
+**VIEW ALL  TICKETS FOR A PARTICULAR TIME (GET)**
 ```
 Input format
 http://localhost:8080/BookingMovies/getTickets?ticketTime=2020-08-30T08:40
@@ -95,7 +95,7 @@ GETTING ALL TICKETS OF A PARTICULAR TIME
 ![BOOK TICKETS ](https://github.com/rochershma/BookingMovies/blob/master1/Get-All-Tickets-for-a-ticket-time.PNG)
 
 ### Use Case 4
-**Delete a particular ticket (DELETE)**
+**DELETE A PARTICULAR TICKET (DELETE)**
 ```
 Input format
 {
@@ -117,7 +117,7 @@ DELETING A TICKET BUT TICKET ID DOES NOT EXISTS
 
 
 ### Use Case 5
-**View the user’s details based on the ticket id (GET)**
+**VIEW THE USER’S DETAILS BASED ON THE TICKET ID (GET)**
 ```
 Input format
 http://localhost:8080/BookingMovies/getUserWithTicket?ticketId=cde637cd-f6b7-40d8-b631-64dd6e0949cd
@@ -131,7 +131,7 @@ GETTING USER DETAILS WITH TICKET ID
 
 
 ### Use Case 6
-**Add user (POST)**
+**ADD USER (POST)**
 ```
 Input format
 {
@@ -147,14 +147,14 @@ ADDING USER
 
 
 ### Use Case 7
-**Get user (GET)**
+**GET USER (GET)**
 ```
 Input format
 http://localhost:8080/BookingMovies/getUser?phoneNumber=9604587612
 ```
-***Description:*** It will give the information of the user provided a phone number of the user..
+***Description:*** It will give the information of the user provided a phone number of the user.
 
-### Additional feature to delete expired tickets automatically
+### ADDITIONAL FEATURE TO DELETE EXPIRED TICKETS AUTOMATICALLY
 
 GETTING USER
 ![](https://github.com/rochershma/BookingMovies/blob/master1/getUser.PNG)
@@ -171,9 +171,14 @@ GETTING USER
 		log.info("cron successfully ran at "+LocalDateTime.now().toString());
 	}
 ```
-***Description:*** It will give the information of the user provided a phone number of the user.
-
-
-AUTOMATIC DELETION OF EXPIRED TICKETS
+   AUTOMATIC DELETION OF EXPIRED TICKETS (snapshot from server logs)
+   
 ![](https://github.com/rochershma/BookingMovies/blob/master1/automatic-deletion-of-expired-tickets-cron.PNG)
+
+
+### UNIT TESTING
+
+unit testing has been done using JUNIT-4 and can be found in /src/main/java/com/zomentum/BookingMovies/test folder.
+
+
 
